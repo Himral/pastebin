@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: 20, maxWidth: 800 }}>
-      <h1>Create Paste</h1>
+      <h1>Paste your text over here</h1>
 
       <form onSubmit={handleSubmit}>
         <textarea
@@ -79,7 +79,7 @@ export default function Home() {
         />
 
         <button type="submit" disabled={loading} style={{ marginTop: 10 }}>
-          {loading ? 'Creating...' : 'Create'}
+          {loading ? 'Generating...' : 'Generate'}
         </button>
       </form>
 

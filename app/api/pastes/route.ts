@@ -31,7 +31,15 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Invalid input' }, { status: 400 });
   }
 
-  const { content, ttl_seconds, max_views } = parsed.data;
+  const rawContent = parsed.data.content;
+const content = rawContent.trim();
+
+if (content.length === 0) {
+  return Response.json({ error: 'Invalid input' }, { status: 400 });
+}
+
+const { ttl_seconds, max_views } = parsed.data;
+
 
   const id = generateId();
   const now = getNow(request);
